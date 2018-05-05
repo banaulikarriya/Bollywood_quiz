@@ -71,6 +71,14 @@
 		{
 			$this->callEverything();			
 		}
+		private function user_score()
+		{
+			$this->callEverything();			
+		}
+		private function top_score()
+		{
+			$this->callEverything();			
+		}
 		
 		
 
