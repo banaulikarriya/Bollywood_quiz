@@ -8,7 +8,7 @@
 /* End of Declaration of array and default responses */
 
 /* Fetch details from DB */
-	$qryGetLikers = "SELECT * FROM songs inner join options on options.song_id = songs.id";
+	$qryGetLikers = "SELECT * FROM songs inner join options on options.song_id = songs.id ORDER BY RAND()";
 	$exeGetLikers=$database->query($qryGetLikers);
 
 	while($fetchInfo = $database->fetch($exeGetLikers)){

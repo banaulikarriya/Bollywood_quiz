@@ -3,7 +3,9 @@
 	$response = 0;
 	$message = '';
 	$tempArray = array();
+	$tempArray2 = array();
 	$finalArray = array();
+	$scoreArray = array();
    /* End of Declaration of array and default responses */
    
    /* Declaration of post parameters from application */	
@@ -33,6 +35,18 @@
 				$tempArray['email_id'] = $fetchInfo['email_id'];
 				$tempArray['contact'] = $fetchInfo['contact'];
 				$tempArray['id'] = $fetchInfo['id'];
+				if($tempArray['id'] != null){
+			        $qry2 = "SELECT * FROM score WHERE user_id='".$fetchInfo['id']."'";   
+			        $exe2 = $database->query($qry2);		
+				    while($fetchInfo = $database->fetch($exe2)){
+
+				    	$tempArray2['quiz_time'] = $fetchInfo['quiz_time'];
+						$tempArray2['score'] = $fetchInfo['score'];
+						$tempArray2['performance'] = $fetchInfo['performance'];
+						array_push($scoreArray,$tempArray2);
+					}
+				}
+				$tempArray['score_data'] = $scoreArray;
 				array_push($finalArray,$tempArray);
 	    	}
 
