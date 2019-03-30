@@ -13,9 +13,5 @@
 	 define('DB_NAME', 'bollywood_quiz');
 /* Connection for DB */
 
-    /*    define('DB_HOST', '130.211.201.12');
-	define('DB_USER', 'admin_profitkey');	
-	define('DB_PASS', 'profitkey');
-	define('DB_NAME', 'admin_profitkey');*/
-
+define('URL', 'https://bollywood-game.000webhostapp.com/bollywood/songs/');
  ?>
